@@ -32,9 +32,9 @@ def list_players_items(player_files: [str]):
         if hundred_count >= 100:
             counted_players += hundred_count
             hundred_count = 0
-            print(f'Scanned {counted_players} pets')
+            print(f'Scanned {counted_players} players')
 
-    print(f'Scanned {str(len(player_files))} pets in total')
+    print(f'Scanned {str(len(player_files))} players in total')
     return players_items
 
 

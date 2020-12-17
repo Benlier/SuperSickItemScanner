@@ -42,9 +42,9 @@ def __list_world_items(region_names: [str]):
         if hundred_count >= 100:
             counted_regions += hundred_count
             hundred_count = 0
-            print(f'Scanned {counted_regions} pets')
+            print(f'Scanned {counted_regions} regions')
 
-    print(f'Scanned {str(len(region_names))} pets in total')
+    print(f'Scanned {str(len(region_names))} regions in total')
     return world_items
 
 
