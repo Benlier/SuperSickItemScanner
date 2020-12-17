@@ -9,9 +9,9 @@ def get_nbt_items(items):
         if "tag" in item:
             if "display" in item['tag']:
                 if 'Name' in item['tag']['display']:
-                    item_id += str(item['tag']['display']['Name'])
+                    item_id += ' ' + str(item['tag']['display']['Name'])
             if "BlockEntityTag" in item['tag']:
-                if 'Items' in item['tag']['BlockEntityTag']: # Shulker boxes for example
+                if 'Items' in item['tag']['BlockEntityTag']:  # Shulker boxes for example
                     nested_items = get_nbt_items(item['tag']['BlockEntityTag']['Items'])
                     entity_items = add_dicts(entity_items, nested_items)
 
