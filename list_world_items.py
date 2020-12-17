@@ -25,7 +25,7 @@ def __get_valoria_region_names(file_path: str):
     names = list()
     for x in range(-16, 16):
         for z in range(-16, 16):
-            names.append(f'{file_path}/r.{x}.{z}.mca')
+            names.append(f'{str(file_path)}/r.{x}.{z}.mca')
     return names
 
 
