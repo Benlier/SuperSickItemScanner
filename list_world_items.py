@@ -31,13 +31,20 @@ def __get_valoria_region_names(file_path: str):
 
 def __list_world_items(region_names: [str]):
     world_items = dict()
-    region_amount = str(len(region_names))
-    scanned_regions = 0
+    hundred_count = 0
+    counted_regions = 0
+
     for region_name in region_names:
         region = Region.from_file(region_name)
         world_items.update(__list_region_items(region))
-        scanned_regions += 1
-        print(str(scanned_regions) + "/" + region_amount)
+
+        hundred_count += 1
+        if hundred_count >= 100:
+            counted_regions += hundred_count
+            hundred_count = 0
+            print(f'Scanned {counted_regions} pets')
+
+    print(f'Scanned {str(len(region_names))} pets in total')
     return world_items
 
 

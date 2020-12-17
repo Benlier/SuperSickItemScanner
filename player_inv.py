@@ -18,8 +18,8 @@ def get_local_player_files(playerdata_folder: str):
 
 def list_players_items(player_files: [str]):
     players_items = dict()
-    player_count = str(len(player_files))
-    scanned_players = 0
+    hundred_count = 0
+    counted_players = 0
 
     for player_file in player_files:
         try:
@@ -27,7 +27,14 @@ def list_players_items(player_files: [str]):
         except UnicodeDecodeError:
             print('Unable to scan ', player_file)
         players_items.update(list_player_items(player))
-        scanned_players += 1
+
+        hundred_count += 1
+        if hundred_count >= 100:
+            counted_players += hundred_count
+            hundred_count = 0
+            print(f'Scanned {counted_players} pets')
+
+    print(f'Scanned {str(len(player_files))} pets in total')
     return players_items
 
 
