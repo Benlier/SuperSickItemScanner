@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="633f79f7-9ed7-462d-ad06-0f399f39e597" name="Default Changelist" comment="" />
+    <list default="true" id="633f79f7-9ed7-462d-ad06-0f399f39e597" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/SuperSickItemScanner.py" beforeDir="false" afterPath="$PROJECT_DIR$/SuperSickItemScanner.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

@@ -1,7 +1,7 @@
 import nbt
 import sqlite3
 import os
-from listWorldItems import get_nbt_items
+from list_world_items import get_nbt_items
 
 
 def main(mypet_db_path):

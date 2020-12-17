@@ -1,7 +1,7 @@
 from anvil import Region
 from anvil import Chunk
 from os import listdir
-from SuperSickUtils import get_nbt_items
+from utils import get_nbt_items
 
 
 def main(regions_folder: str, is_valoria: bool):

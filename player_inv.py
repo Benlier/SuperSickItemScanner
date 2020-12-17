@@ -1,7 +1,7 @@
 from os import listdir
 import nbt
 from nbt.nbt import TAG_Compound
-from SuperSickUtils import get_nbt_items
+from utils import get_nbt_items
 
 
 def main(playerdata_folder: str):
