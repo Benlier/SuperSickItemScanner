@@ -1,7 +1,7 @@
 from os import listdir
 import nbt
 from nbt.nbt import TAG_Compound
-from utils import get_nbt_items
+from utils import get_nbt_items, add_dicts
 
 
 def main(playerdata_folder: str):
@@ -26,7 +26,7 @@ def list_players_items(player_files: [str]):
             player = nbt.nbt.NBTFile(player_file)
         except UnicodeDecodeError:
             print('Unable to scan ', player_file)
-        players_items.update(list_player_items(player))
+        players_items = add_dicts(players_items, list_player_items(player))
 
         hundred_count += 1
         if hundred_count >= 100:
@@ -40,6 +40,6 @@ def list_players_items(player_files: [str]):
 
 def list_player_items(player: TAG_Compound):
     player_items = dict()
-    player_items.update(get_nbt_items(player['Inventory']))
-    player_items.update(get_nbt_items(player['EnderItems']))
+    player_items = add_dicts(player_items, get_nbt_items(player['Inventory']))
+    player_items = add_dicts(player_items, get_nbt_items(player['EnderItems']))
     return player_items

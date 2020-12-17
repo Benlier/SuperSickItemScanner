@@ -1,7 +1,7 @@
 from anvil import Region
 from anvil import Chunk
 from os import listdir
-from utils import get_nbt_items
+from utils import get_nbt_items, add_dicts
 
 
 def main(regions_folder: str, is_valoria: bool):
@@ -36,7 +36,7 @@ def __list_world_items(region_names: [str]):
 
     for region_name in region_names:
         region = Region.from_file(region_name)
-        world_items.update(__list_region_items(region))
+        world_items = add_dicts(world_items, __list_region_items(region))
 
         hundred_count += 1
         if hundred_count >= 100:
@@ -54,7 +54,7 @@ def __list_region_items(region: Region):
         for z in range(32):
             try:
                 chunk_items = __list_chunk_items(region.get_chunk(x, z))
-                region_items.update(chunk_items)
+                region_items = add_dicts(region_items, chunk_items)
             except Exception:
                 pass
     return region_items
@@ -65,6 +65,6 @@ def __list_chunk_items(chunk: Chunk):
     for tile_entity in chunk.tile_entities:
         if "Items" in tile_entity:
             entity_items = get_nbt_items(tile_entity['Items'])
-            chunk_items.update(entity_items)
+            chunk_items = add_dicts(chunk_items, entity_items)
 
     return chunk_items

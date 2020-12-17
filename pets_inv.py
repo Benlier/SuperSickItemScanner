@@ -2,6 +2,7 @@ import nbt
 import sqlite3
 import os
 from list_world_items import get_nbt_items
+from utils import add_dicts
 
 
 def main(mypet_db_path):
@@ -13,7 +14,7 @@ def main(mypet_db_path):
         __write_to_file(row[0], 'tempBlob.nbt')
         pet_skills = nbt.nbt.NBTFile('tempBlob.nbt')
         if 'Backpack' in pet_skills:
-            pet_inventories.update(get_nbt_items(pet_skills['Backpack']['Items']))
+            pet_inventories = add_dicts(pet_inventories, get_nbt_items(pet_skills['Backpack']['Items']))
 
         hundred_count += 1
         if hundred_count >= 100:
