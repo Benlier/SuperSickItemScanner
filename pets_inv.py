@@ -23,7 +23,7 @@ def main(mypet_db_path):
 
     os.remove('tempBlob.nbt')
     pet_count += hundred_count
-    print(f'Scanned {pet_count} pets in total')
+    print(f'Scanned {pet_count} pets in total and found {str(len(pet_inventories))} different items')
     return pet_inventories
 
 

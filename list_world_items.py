@@ -44,7 +44,7 @@ def __list_world_items(region_names: [str]):
             hundred_count = 0
             print(f'Scanned {counted_regions} regions')
 
-    print(f'Scanned {str(len(region_names))} regions in total')
+    print(f'Scanned {str(len(region_names))} regions in total and found {str(len(world_items))} different items')
     return world_items
 
 

@@ -34,7 +34,7 @@ def list_players_items(player_files: [str]):
             hundred_count = 0
             print(f'Scanned {counted_players} players')
 
-    print(f'Scanned {str(len(player_files))} players in total')
+    print(f'Scanned {str(len(player_files))} players in total and found {str(len(players_items))} different items')
     return players_items
 
 
