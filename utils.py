@@ -1,3 +1,6 @@
+from typing import Dict
+
+
 def get_nbt_items(items):
     entity_items = dict()
     for item in items:
@@ -19,7 +22,7 @@ def get_nbt_items(items):
     return entity_items
 
 
-def printlisteditems(itemlist: dict[str, str]):
+def printlisteditems(itemlist: Dict[str, str]):
     with open('itemList.txt', 'w', encoding='utf8') as f:
         for item in itemlist:
             f.write(item + " = " + str(itemlist[item]) + "\n")
