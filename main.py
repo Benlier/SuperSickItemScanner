@@ -5,7 +5,7 @@ from utils import printlisteditems
 
 
 def main():
-    world_folder = '../world'
+    world_folder = '../ThronecraftChapter3'
     mypet_db = '../plugins/MyPet/pets.db'
 
     all_items = dict()
@@ -14,7 +14,7 @@ def main():
     print('--Scanning MyPet Inventories:')
     all_items.update(pets_inv.main(mypet_db))
     print('--Scanning storage ojects in the world:')
-    all_items.update(list_world_items.main(world_folder + '/region', is_valoria=False))
+    all_items.update(list_world_items.main(world_folder + '/region', is_valoria=True))
 
     print('Item entries: '+ str(len(all_items)))
     printlisteditems(all_items)

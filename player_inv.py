@@ -25,10 +25,9 @@ def list_players_items(player_files: [str]):
         try:
             player = nbt.nbt.NBTFile(player_file)
         except UnicodeDecodeError:
-            print(player_file)
+            print('Unable to scan ', player_file)
         players_items.update(list_player_items(player))
         scanned_players += 1
-        # print(str(scanned_players) + "/" + player_count)
     return players_items
 
 
