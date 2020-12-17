@@ -28,7 +28,7 @@ def list_players_items(player_files: [str]):
             print(player_file)
         players_items.update(list_player_items(player))
         scanned_players += 1
-        print(str(scanned_players) + "/" + player_count)
+        # print(str(scanned_players) + "/" + player_count)
     return players_items
 
 

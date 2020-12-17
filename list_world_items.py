@@ -7,7 +7,7 @@ from utils import get_nbt_items
 def main(regions_folder: str, is_valoria: bool):
     region_names: [str]
     if is_valoria:
-        region_names = __get_valoria_region_names()
+        region_names = __get_valoria_region_names(str)
     else:
         region_names = __get_local_region_names(regions_folder)
 
